@@ -6,7 +6,7 @@ $app = new \Slim\Slim(array('mode' => 'production', 'debug' => false ));
 $loader = new Twig_Loader_Filesystem('../templates');
 $twig = new Twig_Environment($loader, array());
 $db = new PDO('mysql:host=localhost;port=3306;dbname=bunker', 'root', 'bunker', array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8; SET SESSION query_cache_type = OFF;"));
-define('REPORT_START', '2014-08-22');
+define('REPORT_START', '2014-08-22'); //for some reason let's consider the report is taken from this date onwards
 
 $app->get('/', function () use ($twig) {
 	echo $twig->render('index.twig');
