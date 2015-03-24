@@ -1,0 +1,17 @@
+{
+    "name": "bunker/tests",
+    "description": "Aptitude assessment test",
+    "require": {
+        "slim/slim": "2.6.2",
+        "twig/twig": "v1.18.0",
+        "robmorgan/phinx": "v0.4.3"
+    },
+    "license": "CC BY-NC-ND",
+    "authors": [
+        {   
+            "name": "Andrés Iribarren",
+            "email": "amephist@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

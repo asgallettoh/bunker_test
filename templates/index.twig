@@ -1,0 +1,42 @@
+{% extends "layout/main.twig" %}
+
+{% block body %}
+    <h1>Prueba técnica <span class="small">v1.0</span></h1>
+    <p>
+        Queremos medir la cantidad de tweets que se enviaron mencionando ciertas cuentas, ciertos hashtags y de algunos usuarios en particular y mostrarlo en una gráfica como esta:
+
+        Sin embargo según el código actual la gráfica no cumple con los requerimientos de diseño y parece que los datos no estan del todo bien.
+        Creemos que se puede hacer mejor y sobre todo pensar en una manera de que el proceso pueda escalar en el tiempo, considerando que la tabla que guarda los tweets puede alcanzar algunos millones de registros.
+    </p>
+
+    <h2>Tareas a realizar</h2>
+    <ul>
+        <li>Los datos no parecen ser acordes a la realidad, hay una brecha donde no hay datos que es muy extraña, tal vez el proceso no importó los datos correctamente.</li>
+        <li>La grafica a veces toma demasiado tiempo en cargar, hay que revisar si se puede optimizar.</li>
+        <li>Se quiere reutilizar el código de la aplicación en una versión mobile. Hacer que el resultado de la llamada a <a href="/graph">/graph</a> sea reutilizable en otros dispositivos</li>
+        <li>Cualquier refactor que se pueda realizar al código</li>
+    </ul>
+
+    <h2>Detalles generales de desarrollo</h2>
+    <ul>
+        <li>Crear un branch dev para todos los cambios y no hacer ningun commit al branch master</li>
+        <li>Cambios a la base de datos se tiene que realizar usando la herramienta Phinx</li>
+        <li>Se recomienda no confiar que las consultas vas a ser cacheadas por la base de datos.</li>
+        <li>Por convención el código PHP tiene que ser compatible especificaciones PSR-1 y PSR-2</li>
+    </ul>
+
+
+    <div class="row">
+        <div id="chart_placeholder">
+            <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+        </div>
+    </div>
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            $.get("/graph", function (data) {
+                $("#chart_placeholder").html(data);
+            });
+        });
+    </script>
+{% endblock %}

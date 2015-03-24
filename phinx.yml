@@ -1,0 +1,14 @@
+paths:
+    migrations: %%PHINX_CONFIG_DIR%%/migrations
+
+environments:
+    default_migration_table: phinxlog
+    default_database: bunker_test
+    bunker_test: 
+        adapter: mysql
+        host: localhost
+        name: bunker
+        user: root
+        pass: bunker
+        port: 3306
+        charset: utf8
