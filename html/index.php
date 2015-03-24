@@ -12,7 +12,7 @@ $app->get('/', function () use ($twig) {
 	echo $twig->render('index.twig');
 });
 
-$app->get('/graph', function () use ($twig, $db) {
+$app->get('/chart', function () use ($twig, $db) {
     $stmt = $db->prepare("SELECT tracking_type, tracking_term FROM twitter_tracking");
     $stmt->execute();
     $data = array('hashtag' => array(), 'mentions' => array());
@@ -48,7 +48,7 @@ $app->get('/graph', function () use ($twig, $db) {
     }
     $data = fillDates($data, REPORT_START);
 
-    echo $twig->render('graph.twig', array('data' => $data));
+    echo $twig->render('chart.twig', array('data' => $data));
 });
 
 $app->run();
