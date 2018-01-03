@@ -3,7 +3,7 @@
 use Phinx\Migration\AbstractMigration;
 
 class InitialMigration extends AbstractMigration
-{
+{ 
     
     /**
      * Migrate Up.

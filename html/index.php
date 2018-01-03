@@ -14,7 +14,7 @@ $app->get('/', function () use ($twig) {
 
 $app->get('/chart', function () use ($twig, $db) {
     $stmt = $db->prepare("SELECT tracking_type, tracking_term FROM twitter_tracking");
-    $stmt->execute();
+    $stmt->execute(); 
     $data = array('hashtag' => array(), 'mentions' => array());
     foreach ($stmt->fetchAll() as $track) {
         if ($track['tracking_type'] == 'hashtag')
