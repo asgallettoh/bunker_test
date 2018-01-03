@@ -5,7 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "f6f82e4139a881e75543f86c85451f63",
-    "packages": [
+    "packages": [ 
         {
             "name": "robmorgan/phinx",
             "version": "v0.4.3",
