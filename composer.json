@@ -9,8 +9,8 @@
     "license": "CC BY-NC-ND",
     "authors": [
         {   
-            "name": "Andrés Iribarren",
-            "email": "amephist@gmail.com"
+            "name": "BunkerDB",
+            "email": "it@bunkerdb.com"
         }
     ], 
     "minimum-stability": "dev"
